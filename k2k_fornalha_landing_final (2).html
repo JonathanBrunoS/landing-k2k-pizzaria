@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K2K Fornalha Digital - Sua pizzaria bombando sem depender do iFood</title>
+    <meta name="description" content="Marketing + Cardápio Digital + Clientes no Zap + Agente de IA. Acelere sua pizzaria com a K2K Fornalha Digital.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){
+    n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,\'script\',
+    \'https://connect.facebook.net/en_US/fbevents.js\');
+    fbq(\'init\', \'SEU_PIXEL_ID_AQUI\');
+    fbq(\'track\', \'PageView\');
+    </script>
+    <noscript><img height=\'1\' width=\'1\' style=\'display:none\'
+    src=\'https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1\'
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src=\'https://www.googletagmanager.com/gtag/js?id=SEU_GA_ID_AQUI\'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag(\'js\', new Date());
+      gtag(\'config\', \'SEU_GA_ID_AQUI\');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: \'Inter\', -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            padding-top: 90px; /* Adiciona padding para o cabeçalho fixo */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            max-width: 150px; /* Limita o tamanho da logo */
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FF6A00 0%, #FF8533 100%);
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px 80px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .hero .btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero .btn:hover {
+            background-color: #218838;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #FF6A00;
+            font-weight: 700;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Dor Section */
+        .dor-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .dor-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            width: calc(33% - 20px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .dor-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .dor-item h3 {
+            font-size: 1.5em;
+            color: #FF6A00;
+            margin-bottom: 15px;
+        }
+
+        .dor-item ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .dor-item ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Solucao Section */
+        .solucao-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .solucao-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #eee; /* Adicionado para dar uma borda */
+        }
+
+        .solucao-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .solucao-item .icon {
+            font-size: 3em;
+            color: #FF6A00;
+            margin-bottom: 15px;
+        }
+
+        .solucao-item h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .solucao-item p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Passos Section */
+        .passos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .passo-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: calc(33% - 40px);
+            text-align: center;
+            position: relative;
+        }
+
+        .passo-item .number {
+            background-color: #FF6A00;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            font-weight: 700;
+            margin: 0 auto 20px auto;
+        }
+
+        .passo-item h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .passo-item p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* Planos Section */
+        .planos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .plano-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: calc(33% - 20px);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .plano-card h3 {
+            font-size: 2em;
+            color: #FF6A00;
+            margin-bottom: 15px;
+        }
+
+        .plano-card .price {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .plano-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .plano-card ul li {
+            margin-bottom: 10px;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .plano-card .btn {
+            background-color: #FF6A00;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .plano-card .btn:hover {
+            background-color: #e65c00;
+        }
+
+        .plano-card .contract-note {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 15px;
+        }
+
+        /* Depoimentos Section */
+        .depoimentos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .depoimento-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: calc(50% - 20px);
+            text-align: left;
+        }
+
+        .depoimento-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .depoimento-card .author {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* CTA Final Section */
+        .cta-final {
+            background: linear-gradient(135deg, #FF6A00 0%, #FF8533 100%);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            color: #fff;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+        }
+
+        .cta-final p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-final .btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-final .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .footer .logo {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #FF6A00;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Agente IA Section */
+        .agente-ia-section {
+            background-color: #222;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .agente-ia-section h2 {
+            color: #FF6A00;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .agente-ia-section p {
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .ia-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .ia-feature-item {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .ia-feature-item h3 {
+            color: #FF6A00;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .ia-feature-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ia-feature-item ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5; /* Adicionado para melhorar o espaçamento */
+        }
+
+        .ia-feature-item ul li::before {
+            content: '✓';
+            color: #28a745;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .ia-cost-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .cost-card {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            width: calc(50% - 30px);
+            max-width: 450px;
+        }
+
+        .cost-card h3 {
+            color: #FF6A00;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .cost-card .price-tag {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .cost-card p {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .cost-card .highlight {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .dor-item,
+            .passo-item,
+            .plano-card,
+            .depoimento-card,
+            .cost-card {
+                width: 100%;
+            }
+
+            .solucao-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section h2 {
+                font-size: 2em;
+            }
+
+            .cta-final h2 {
+                font-size: 2em;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://api.whatsapp.com/send?phone=5511974704297&text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20K2K%20Fornalha%20Digital!" target="_blank" class="whatsapp-float" onclick="gtag(\'event\', \'click\', {
+        \'event_category\': \'WhatsApp Float\',
+        \'event_label\': \'Contato Flutuante\'
+    }); fbq(\'track\', \'Contact\');">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <img src="https://i.postimg.cc/kMkdhK1q/PSD-OFICIAL-PNG-PRETA-MISTA-OK.png" alt="K2K Fornalha Digital Logo" class="logo">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sua pizzaria bombando sem depender do iFood</h1>
+            <p>Marketing + Cardápio Digital + Clientes no Zap</p>
+            <a href="https://api.whatsapp.com/send?phone=5511974704297&text=Ol%C3%A1%2C%20quero%20acelerar%20minha%20pizzaria%20com%20a%20K2K%20Fornalha%20Digital!" target="_blank" class="btn" onclick="gtag(\'event\', \'click\', {
+                \'event_category\': \'CTA Hero\',
+                \'event_label\': \'Quero Acelerar Minha Pizzaria\'
+            }); fbq(\'track\', \'Lead\');">Quero Acelerar Minha Pizzaria</a>
+        </div>
+    </section>
+
+    <!-- Dor Section -->
+    <section class="section" id="dores">
+        <div class="container">
+            <h2>As Dores que Sua Pizzaria Enfrenta</h2>
+            <p>Sabemos que gerenciar uma pizzaria de sucesso vai além de fazer pizzas deliciosas. Você provavelmente se depara com desafios que minam seu lucro e crescimento:</p>
+            <div class="dor-list">
+                <div class="dor-item">
+                    <h3>Altas Taxas e Dependência do iFood</h3>
+                    <ul>
+                        <li>Comissões que corroem sua margem de lucro.</li>
+                        <li>Falta de controle sobre a base de clientes.</li>
+                        <li>Concorrência acirrada dentro da plataforma.</li>
+                    </ul>
+                </div>
+                <div class="dor-item">
+                    <h3>Falta de Tráfego e Visibilidade</h3>
+                    <ul>
+                        <li>Dificuldade em atrair novos clientes online.</li>
+                        <li>Pouca visibilidade nas buscas locais.</li>
+                        <li>Investimento em marketing sem retorno claro.</li>
+                    </ul>
+                </div>
+                <div class="dor-item">
+                    <h3>Baixa Recorrência e Fidelização</h3>
+                    <ul>
+                        <li>Clientes que compram uma vez e não voltam.</li>
+                        <li>Dificuldade em manter um relacionamento direto.</li>
+                        <li>Ausência de estratégias para engajar sua base.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voce Sabia Section -->
+    <section class="section" style="background: #fff7f0; padding: 40px 20px; border-top: 3px solid #FF6A00;">
+        <div class="container">
+            <h2 style="color: #FF6A00; font-size: 2em; margin-bottom: 20px;">Você sabia?</h2>
+            <p style="font-size: 1.2em; color: #333;">
+                A cada R$10.000 vendidos pelo iFood, sua pizzaria pode perder até <strong>R$3.000 em taxas</strong>.
+            </p>
+            <p style="margin-top: 15px;">
+                Com a <strong>K2K Fornalha Digital</strong>, esse valor pode voltar direto pro seu caixa, vendendo no WhatsApp com campanhas rastreáveis e fidelização direta.
+            </p>
+        </div>
+    </section>
+
+    <!-- Solucao Section -->
+    <section class="section" id="solucao">
+        <div class="container">
+            <h2>Nossa Solução: O Método Acelera Fornalha</h2>
+            <p>A K2K Fornalha Digital oferece uma solução completa para sua pizzaria prosperar, com estratégias personalizadas que visam o crescimento sustentável e a independência de plataformas de terceiros:</p>
+            <div class="solucao-grid">
+                <div class="solucao-item">
+                    <div class="icon">🍕</div>
+                    <h3>Cardápio Digital Rastreável</h3>
+                    <p>Crie um cardápio online otimizado para vendas, com rastreamento de pedidos e integração.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="icon">📈</div>
+                    <h3>Gestão de Tráfego (Google + Meta)</h3>
+                    <p>Anúncios estratégicos no Google e redes sociais para atrair clientes qualificados.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="icon">📍</div>
+                    <h3>Otimização do Google Meu Negócio</h3>
+                    <p>Destaque sua pizzaria nas buscas locais e no Google Maps, atraindo clientes próximos.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="icon">📱</div>
+                    <h3>Social Media Estratégico</h3>
+                    <p>Conteúdo envolvente e campanhas que transformam seguidores em clientes fiéis.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="icon">💬</div>
+                    <h3>Suporte Dedicado via WhatsApp</h3>
+                    <p>Atendimento rápido e personalizado para todas as suas dúvidas e necessidades.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="icon">📊</div>
+                    <h3>Análise de Resultados e ROI</h3>
+                    <p>Monitoramento constante para otimizar campanhas e garantir o melhor retorno sobre o investimento.</p>
+                </div>
+                <div class="solucao-item">
+                    <div class="icon">🎁</div>
+                    <h3>Programa de Fidelidade Personalizado</h3>
+                    <p>Crie engajamento com clientes oferecendo recompensas como pizzas doces após 5 pedidos. Simples, eficaz e automatizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passos Section -->
+    <section class="section" id="passos">
+        <div class="container">
+            <h2>Nosso Processo em 3 Passos Simples</h2>
+            <p>Transformar sua pizzaria em uma máquina de vendas é mais fácil do que você imagina. Siga nosso método:</p>
+            <div class="passos-grid">
+                <div class="passo-item">
+                    <div class="number">1</div>
+                    <h3>Diagnóstico Personalizado</h3>
+                    <p>Analisamos a fundo sua pizzaria, público e concorrência para criar a estratégia ideal.</p>
+                </div>
+                <div class="passo-item">
+                    <div class="number">2</div>
+                    <h3>Execução Otimizada</h3>
+                    <p>Implementamos as campanhas de marketing, cardápio digital e otimizações com foco em resultados.</p>
+                </div>
+                <div class="passo-item">
+                    <div class="number">3</div>
+                    <h3>Resultados e Otimização Contínua</h3>
+                    <p>Monitoramos, ajustamos e escalamos suas vendas, garantindo crescimento constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agente IA Section -->
+    <section class="agente-ia-section" id="agente-ia">
+        <div class="container">
+            <h2>Agente de IA: O Atendente do Futuro para Sua Pizzaria</h2>
+            <p>Imagine um atendente que trabalha 24 horas por dia, 7 dias por semana, sem falhas, sem cansaço e com uma eficiência que nenhum humano consegue replicar. Apresentamos o Agente de IA da K2K Fornalha Digital, a solução definitiva para otimizar seu atendimento e vendas.</p>
+            
+            <div class="ia-features-grid">
+                <div class="ia-feature-item">
+                    <h3>Atendimento Inteligente e Humanizado</h3>
+                    <ul>
+                        <li>Compreende áudio e texto com precisão.</li>
+                        <li>Responde a dúvidas sobre cardápio, promoções e entrega.</li>
+                        <li>Interage de forma natural e personalizada.</li>
+                    </ul>
+                </div>
+                <div class="ia-feature-item">
+                    <h3>Vendas Autônomas e Eficientes</h3>
+                    <ul>
+                        <li>Realiza vendas completas, do pedido ao pagamento.</li>
+                        <li>Sugere adicionais e promoções para aumentar o ticket médio.</li>
+                        <li>Envia a comanda diretamente para o sistema da cozinha.</li>
+                    </ul>
+                </div>
+                <div class="ia-feature-item">
+                    <h3>Disponibilidade e Escalabilidade</h3>
+                    <ul>
+                        <li>Atende múltiplos clientes simultaneamente.</li>
+                        <li>Disponível 24/7, incluindo feriados e horários de pico.</li>
+                        <li>Reduz filas e tempo de espera, melhorando a experiência do cliente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 60px;">Agente de IA vs. Funcionário Tradicional: Uma Análise de Custos</h2>
+            <p>A decisão de investir em tecnologia deve ser baseada em dados. Veja a comparação de custos e eficiência:</p>
+            
+            <div class="ia-cost-comparison">
+                <div class="cost-card">
+                    <h3>Funcionário Tradicional</h3>
+                    <p class="price-tag">R$ 1.500 - R$ 3.000 / mês</p>
+                    <p>Custo médio mensal com salário, encargos, benefícios e treinamento.</p>
+                    <ul>
+                        <li><span class="highlight">❌</span> Sujeito a erros e cansaço.</li>
+                        <li><span class="highlight">❌</span> Limitação de atendimento simultâneo.</li>
+                        <li><span class="highlight">❌</span> Custos adicionais com faltas e rotatividade.</li>
+                    </ul>
+                </div>
+                <div class="cost-card">
+                    <h3>Agente de IA K2K Fornalha Digital</h3>
+                    <p class="price-tag">R$ 3.700 (Setup) + R$ 250 / mês</p>
+                    <p>Investimento inicial e mensalidade para operação contínua.</p>
+                    <ul>
+                        <li><span class="highlight">✅</span> Eficiência 24/7 sem falhas.</li>
+                        <li><span class="highlight">✅</span> Atendimento ilimitado e simultâneo.</li>
+                        <li><span class="highlight">✅</span> Redução de custos em até <span class="highlight">R$ 2.750/mês</span> por \"posição\" de atendimento.</li>
+                        <li><span class="highlight">✅</span> Retorno do investimento em <span class="highlight">menos de 2 meses</span>.</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 40px;">Com o Agente de IA, sua pizzaria ganha um funcionário incansável, que otimiza processos, aumenta vendas e libera sua equipe para focar no que realmente importa: a qualidade da pizza e a experiência presencial do cliente.</p>
+        </div>
+    </section>
+
+    <!-- Planos Section -->
+    <section class="section" id="planos">
+        <div class="container">
+            <h2>Escolha o Plano Ideal para Sua Pizzaria</h2>
+            <p>Nossos planos são flexíveis e projetados para atender às necessidades de pizzarias de todos os tamanhos, garantindo o máximo retorno sobre seu investimento.</p>
+            <div class="planos-grid">
+                <div class="plano-card">
+                    <h3>Basic Plan</h3>
+                    <p class="price">R$ 699/mês</p>
+                    <ul>
+                        <li>Cardápio Digital</li>
+                        <li>GMB otimizado</li>
+                        <li>Suporte padrão</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=5511974704297&text=Ol%C3%A1%2C%20quero%20o%20plano%20Basic%20para%20minha%20pizzaria%2C%20vamos%20conversar%3F" target="_blank" class="btn" onclick="gtag(\'event\', \'click\', {
+                        \'event_category\': \'Plano Basic\',
+                        \'event_label\': \'Escolher Plano Basic\'
+                    }); fbq(\'track\', \'AddToCart\', {content_name: \'Basic Plan\'});">Escolher este plano</a>
+                    <p class="contract-note">Contrato mínimo de 3 meses.</p>
+                </div>
+                <div class="plano-card">
+                    <h3>Growth Plan</h3>
+                    <p class="price">R$ 1.350/mês</p>
+                    <ul>
+                        <li>Inclui o Basic</li>
+                        <li>3 posts/semana no Instagram</li>
+                        <li>Google Ads básico</li>
+                        <li>Relatório mensal</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=5511974704297&text=Ol%C3%A1%2C%20quero%20o%20plano%20Growth%20para%20minha%20pizzaria%2C%20vamos%20conversar%3F" target="_blank" class="btn" onclick="gtag(\'event\', \'click\', {
+                        \'event_category\': \'Plano Growth\',
+                        \'event_label\': \'Escolher Plano Growth\'
+                    }); fbq(\'track\', \'AddToCart\', {content_name: \'Growth Plan\'});">Escolher este plano</a>
+                    <p class="contract-note">Contrato mínimo de 3 meses.</p>
+                </div>
+                <div class="plano-card">
+                    <h3>Scale Plan</h3>
+                    <p class="price">R$ 3.500/mês</p>
+                    <ul>
+                        <li>Inclui o Growth</li>
+                        <li>Tráfego Meta + Google</li>
+                        <li>5 posts + stories</li>
+                        <li>Suporte prioritário</li>
+                        <li>Análise de ROI</li>
+                        <li>Agente de IA (Setup R$ 3.700 + R$ 250/mês)</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=5511974704297&text=Ol%C3%A1%2C%20quero%20o%20plano%20Scale%20para%20minha%20pizzaria%2C%20vamos%20conversar%3F" target="_blank" class="btn" onclick="gtag(\'event\', \'click\', {
+                        \'event_category\': \'Plano Scale\',
+                        \'event_label\': \'Escolher Plano Scale\'
+                    }); fbq(\'track\', \'AddToCart\', {content_name: \'Scale Plan\'});">Escolher este plano</a>
+                    <p class="contract-note">Contrato mínimo de 3 meses.</p>
+                </div>
+            </div>
+            <p class="contract-note" style="margin-top: 40px;"><strong>Observação:</strong> O Agente de IA é um serviço adicional que pode ser contratado separadamente ou incluído no Scale Plan.</p>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="section" id="depoimentos">
+        <div class="container">
+            <h2>O que Nossos Clientes Dizem</h2>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card">
+                    <p>\"Desde que começamos com a K2K Fornalha Digital, nossas vendas dispararam! O cardápio digital é incrível e a gestão de tráfego trouxe muitos clientes novos. Estamos muito satisfeitos!\"</p>
+                    <p class="author">- João Silva, Pizzaria Sabor Divino</p>
+                </div>
+                <div class="depoimento-card">
+                    <p>\"Conseguimos reduzir nossa dependência do iFood em mais de 50% em apenas 3 meses. O suporte é excelente e as estratégias de social media realmente funcionam. Recomendo a todos!\"</p>
+                    <p class="author">- Maria Oliveira, Fornalha Quente Pizzas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section class="cta-final" id="contato">
+        <div class="container">
+            <h2>Pronto para Acelerar Sua Pizzaria?</h2>
+            <p>Não perca mais tempo e dinheiro com estratégias que não funcionam. Agende agora sua consultoria gratuita e descubra como a K2K Fornalha Digital pode transformar seu negócio!</p>
+            <a href="https://api.whatsapp.com/send?phone=5511974704297&text=Ol%C3%A1%2C%20quero%20agendar%20minha%20consultoria%20gratuita%20com%20a%20K2K%20Fornalha%20Digital!" target="_blank" class="btn" onclick="gtag(\'event\', \'click\', {
+                \'event_category\': \'CTA Final\',
+                \'event_label\': \'Agendar Consultoria Gratuita\'
+            }); fbq(\'track\', \'Contact\');">Agendar minha consultoria gratuita</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <img src="https://i.postimg.cc/kMkdhK1q/PSD-OFICIAL-PNG-PRETA-MISTA-OK.png" alt="K2K Fornalha Digital Logo" class="logo">
+            <p>Telefone: +55 11 97470-4297</p>
+            <p>E-mail: contato@agenciak2k.com</p>
+            <p>Endereço: Rua: Nossa Senhora da Natividade, 80 - Piqueri, São Paulo - SP, 02914-060</p>
+            <p>&copy; 2024 K2K Fornalha Digital. Todos os direitos reservados.</p>
+            <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll(\'a[href^="#"]\').forEach(anchor => {
+            anchor.addEventListener(\'click\', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute(\'href\')).scrollIntoView({
+                    behavior: \'smooth\'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
